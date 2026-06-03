@@ -12,9 +12,14 @@ type WorkItem = {
   description: string;
   tags: string[];
   status: "Active" | "In Progress" | "Defended" | "Completed";
-  previewImage?: string;
+  previewImage?: string; // image file (.jpg/.png) for hover thumbnail
+  previewFile?: string;  // PDF or doc file for full modal embed (.pdf)
   detailDescription?: string;
 };
+
+function isPDF(path: string) {
+  return path.toLowerCase().endsWith(".pdf");
+}
 
 const workItems: WorkItem[] = [
   {
@@ -29,7 +34,8 @@ const workItems: WorkItem[] = [
       "Authored and defended two research papers in artificial intelligence at Ukraine's national Junior Academy of Sciences. Papers went through peer review and national competition. Topics covered AI-based modeling and prediction systems. Both papers were defended at the national level — one of which placed 1st in the All-Ukrainian Competition of the Junior Academy of Sciences.",
     tags: ["Artificial Intelligence", "National Level", "1st Place"],
     status: "Defended",
-    previewImage: "/previews/research-poster.jpg", // TODO: drop your poster/paper image here
+    previewImage: "/previews/research-poster.jpg", // drop a screenshot/thumbnail here
+    previewFile: "/previews/research-paper.pdf",   // drop the actual PDF here
   },
   {
     id: "algoverse",
@@ -56,7 +62,8 @@ const workItems: WorkItem[] = [
       "Founded GPL — a free, weekly competitive programming league connecting students at Wellesley and top Ukrainian science lyceums. Students compete across Novice, Intermediate, and Advanced tracks. Weekly 24-hour contests, bilingual solution editorials (English/Ukrainian), live leaderboard, monthly in-person review sessions. 100+ participants across 2 countries.",
     tags: ["Founded", "100+ participants", "US & Ukraine", "$0 fee"],
     status: "Active",
-    previewImage: "/previews/gpl-one-pager.jpg", // Save the One Pager screenshot here
+    previewImage: "/previews/gpl-one-pager.jpg", // drop a screenshot/thumbnail here
+    previewFile: "/previews/gpl-one-pager.pdf",  // drop the PDF here
   },
   {
     id: "clothing",
@@ -193,8 +200,16 @@ export default function WorkShowcase() {
               ✕
             </button>
 
-            {/* Preview image */}
-            {activeModal.previewImage && (
+            {/* Preview — PDF iframe or image */}
+            {activeModal.previewFile && isPDF(activeModal.previewFile) ? (
+              <div className="overflow-hidden rounded-t-2xl border-b border-white/10">
+                <iframe
+                  src={activeModal.previewFile}
+                  className="h-[60vh] w-full"
+                  title={activeModal.title}
+                />
+              </div>
+            ) : activeModal.previewImage ? (
               <div className="overflow-hidden rounded-t-2xl border-b border-white/10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -202,12 +217,11 @@ export default function WorkShowcase() {
                   alt={activeModal.title}
                   className="w-full"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).parentElement!.style.display =
-                      "none";
+                    (e.target as HTMLImageElement).parentElement!.style.display = "none";
                   }}
                 />
               </div>
-            )}
+            ) : null}
 
             {/* Content */}
             <div className="p-8">
