@@ -35,7 +35,7 @@ export default function Sidebar() {
         />
       </div>
 
-      <h1 className="mb-0.5 text-lg font-bold text-white leading-tight">
+      <h1 className="mb-0.5 text-xl font-bold text-white leading-tight">
         Bohuslav Onyshchuk
       </h1>
       <p className="mb-0.5 text-sm text-zinc-400">Computer Science & Artificial Intelligence</p>
