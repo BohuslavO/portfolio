@@ -141,7 +141,11 @@ export default function WorkShowcase() {
 
   const Card = ({ item }: { item: WorkItem }) => (
     <div
-      className="glow-card relative cursor-pointer rounded-xl border border-purple-500/20 bg-white/5 p-5 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.25)]"
+      className={`relative cursor-pointer rounded-xl border bg-white/5 p-5 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.25)] ${
+        (item.previewImage || item.previewFile)
+          ? "glow-card border-purple-500/30"
+          : "border-white/10"
+      }`}
       onClick={() => setActiveModal(item)}
     >
       <div className="flex items-start justify-between gap-4">
@@ -168,8 +172,12 @@ export default function WorkShowcase() {
           </div>
         </div>
         {(item.previewImage || item.previewFile) && (
-          <div className="flex-shrink-0 rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] text-zinc-500 transition-colors hover:text-purple-400">
-            Press to preview
+          <div className="flex-shrink-0 flex items-center gap-1.5 rounded-lg border border-purple-500/40 bg-purple-500/15 px-3 py-1.5 text-xs font-medium text-purple-300 transition-all hover:bg-purple-500/25 hover:border-purple-500/70">
+            <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+            Preview
           </div>
         )}
       </div>
