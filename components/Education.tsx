@@ -4,14 +4,14 @@ const education = [
     location: "Wellesley, MA, USA",
     degree: "High School — 10th Grade",
     detail: "GPA: 4.75 weighted / 4.0 unweighted",
-    year: "2025–Present",
+    year: "2025–2028",
   },
   {
     school: "Rivne Regional Scientific Lyceum",
     location: "Ukraine (online)",
     degree: "High School — 11th Grade",
     detail: "Specialization: Computer Science",
-    year: "2022–Present",
+    year: "2022–2026",
   },
 ];
 
