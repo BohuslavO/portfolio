@@ -68,12 +68,12 @@ const workItems: WorkItem[] = [
   {
     id: "clothing",
     category: "project",
-    title: "Clothing Business",
-    subtitle: "Self-funded reselling operation",
+    title: "Founder — Clothing Business & Team",
+    subtitle: "Self-funded operation",
     year: "2024–Present",
     description:
-      "Built a profitable clothing reselling business from scratch. ~$500/month revenue. Managed sourcing, pricing, and sales independently.",
-    tags: ["Entrepreneurship", "~$500/mo", "Self-funded"],
+      "Founded and scaled a profitable clothing business with a team. Monthly revenue equivalent to the average monthly salary in Ukraine. Managed sourcing, pricing, team, and sales independently.",
+    tags: ["Entrepreneurship", "Team", "Self-funded"],
     status: "Active",
   },
 ];
