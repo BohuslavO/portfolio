@@ -173,13 +173,13 @@ export default function WorkShowcase() {
       {/* Research */}
       <section id="research">
         <SectionLabel>Research & Academic Work</SectionLabel>
-        <SpoilerSection>
-          <div className="space-y-3">
-            {research.map((item) => (
-              <Card key={item.id} item={item} />
-            ))}
-          </div>
-        </SpoilerSection>
+        <div className="space-y-3">
+          {research.map((item) => (
+            <SpoilerSection key={item.id}>
+              <Card item={item} />
+            </SpoilerSection>
+          ))}
+        </div>
       </section>
 
       {/* Projects */}
@@ -187,7 +187,9 @@ export default function WorkShowcase() {
         <SectionLabel>Projects</SectionLabel>
         <div className="space-y-3">
           {projects.map((item) => (
-            <Card key={item.id} item={item} />
+            <SpoilerSection key={item.id}>
+              <Card item={item} />
+            </SpoilerSection>
           ))}
         </div>
       </section>
