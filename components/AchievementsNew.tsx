@@ -3,7 +3,7 @@ import { SectionLabel } from "./Education";
 const achievements = [
   {
     label: "National Champion in Go (2022)",
-    detail: "Former Ukrainian National Go Team member",
+    detail: "Ukrainian National Team · Baduk / Weiqi",
   },
   {
     label: "1st Place — All-Ukrainian Competition, Junior Academy of Sciences",
@@ -23,11 +23,7 @@ const achievements = [
   },
   {
     label: "Varsity Fencing Team — Massachusetts State Championship",
-    detail: "2026",
-  },
-  {
-    label: "Member of the Ukrainian National Go Team",
-    detail: "Baduk / Weiqi (2022)",
+    detail: "2025–2026",
   },
 ];
 
