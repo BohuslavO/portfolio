@@ -1,4 +1,5 @@
 import { SectionLabel } from "./Education";
+import { SpoilerSection } from "./SpoilerSection";
 
 const items = [
   { text: "3+ years in Unity (C#) — game development, starting age 11" },
@@ -16,16 +17,18 @@ export default function TechExperience() {
     <>
       <section>
         <SectionLabel>Technical Experience</SectionLabel>
-        <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-          <ul className="space-y-3">
-            {items.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-zinc-300">
-                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-purple-500/70" />
-                {item.text}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <SpoilerSection>
+          <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+            <ul className="space-y-3">
+              {items.map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-zinc-300">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-purple-500/70" />
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </SpoilerSection>
       </section>
 
       {/* Contact anchor — targeted by navbar */}

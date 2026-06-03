@@ -1,4 +1,5 @@
 import { SectionLabel } from "./Education";
+import { SpoilerSection } from "./SpoilerSection";
 
 const achievements = [
   {
@@ -31,6 +32,7 @@ export default function AchievementsNew() {
   return (
     <section id="achievements">
       <SectionLabel>Leadership & Achievements</SectionLabel>
+      <SpoilerSection>
       <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
         <ul className="space-y-4">
           {achievements.map((item, i) => (
@@ -44,6 +46,7 @@ export default function AchievementsNew() {
           ))}
         </ul>
       </div>
+      </SpoilerSection>
     </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SectionLabel } from "./Education";
+import { SpoilerSection } from "./SpoilerSection";
 
 type WorkItem = {
   id: string;
@@ -172,11 +173,13 @@ export default function WorkShowcase() {
       {/* Research */}
       <section id="research">
         <SectionLabel>Research & Academic Work</SectionLabel>
-        <div className="space-y-3">
-          {research.map((item) => (
-            <Card key={item.id} item={item} />
-          ))}
-        </div>
+        <SpoilerSection>
+          <div className="space-y-3">
+            {research.map((item) => (
+              <Card key={item.id} item={item} />
+            ))}
+          </div>
+        </SpoilerSection>
       </section>
 
       {/* Projects */}
