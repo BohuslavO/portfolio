@@ -60,7 +60,7 @@ const workItems: WorkItem[] = [
     description:
       "Founded and run a free competitive programming league between US and Ukrainian students. 100+ participants across 2 countries.",
     detailDescription:
-      "Founded GPL — a free, weekly competitive programming league connecting students at Wellesley and top Ukrainian science lyceums. Weekly 24-hour contests, bilingual solution editorials (English/Ukrainian), live leaderboard, monthly in-person review sessions. 100+ participants across 2 countries.",
+      "Founded GPL — a free, weekly competitive programming league connecting students across USA and top Ukrainian science lyceums. Weekly 24-hour contests, bilingual solution editorials (English/Ukrainian), live leaderboard, monthly in-person review sessions. 100+ participants across 2 countries.",
     tags: ["Founded", "100+ participants", "US & Ukraine"],
     status: "Active",
     previewImage: "/previews/GPL_OnePager_Wellesley.png",
