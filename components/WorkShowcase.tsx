@@ -131,8 +131,8 @@ export default function WorkShowcase() {
           </div>
         </div>
         {(item.previewImage || item.previewFile) && (
-          <div className="flex-shrink-0 rounded-md bg-white/5 px-2 py-1 text-xs text-zinc-600 transition-colors group-hover:text-purple-400">
-            preview →
+          <div className="flex-shrink-0 rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] text-zinc-500 transition-colors hover:text-purple-400">
+            Press to preview
           </div>
         )}
       </div>
