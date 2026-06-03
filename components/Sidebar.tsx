@@ -1,3 +1,5 @@
+"use client";
+
 const languages = [
   { name: "Ukrainian", level: "Native" },
   { name: "English", level: "Fluent" },
