@@ -98,7 +98,6 @@ function StatusBadge({ status }: { status: string }) {
 
 export default function WorkShowcase() {
   const [activeModal, setActiveModal] = useState<WorkItem | null>(null);
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   const research = workItems.filter((w) => w.category === "research");
   const projects = workItems.filter((w) => w.category === "project");
@@ -107,8 +106,6 @@ export default function WorkShowcase() {
     <div
       className="relative cursor-pointer rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all hover:border-purple-500/50 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]"
       onClick={() => setActiveModal(item)}
-      onMouseEnter={() => setHoveredId(item.id)}
-      onMouseLeave={() => setHoveredId(null)}
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1 min-w-0">
@@ -140,31 +137,6 @@ export default function WorkShowcase() {
         )}
       </div>
 
-      {/* Hover preview — floats above the card */}
-      {hoveredId === item.id && (item.previewImage || item.previewFile) && (
-        <div className="pointer-events-none absolute bottom-full left-0 z-50 mb-3 w-72 overflow-hidden rounded-xl border border-purple-500/30 bg-zinc-950 shadow-[0_0_40px_rgba(168,85,247,0.25)] ring-1 ring-white/10">
-          {item.previewImage ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={item.previewImage}
-              alt={`${item.title} preview`}
-              className="w-full"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-            />
-          ) : (
-            <div className="flex items-center gap-3 px-4 py-5">
-              <span className="text-3xl">📄</span>
-              <div>
-                <p className="text-sm font-medium text-white">{item.title}</p>
-                <p className="text-xs text-zinc-500">PDF available</p>
-              </div>
-            </div>
-          )}
-          <div className="border-t border-white/10 px-3 py-2">
-            <p className="text-xs text-zinc-500">Click to open full view</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 
