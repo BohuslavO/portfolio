@@ -6,15 +6,15 @@ import { SpoilerSection } from "./SpoilerSection";
 
 type WorkItem = {
   id: string;
-  category: "research" | "project";
+  category: "research" | "project" | "certification";
   title: string;
   subtitle: string;
   year: string;
   description: string;
   tags: string[];
   status: "Active" | "In Progress" | "Defended" | "Completed";
-  previewImage?: string; // image file (.jpg/.png) for hover thumbnail
-  previewFile?: string;  // PDF or doc file for full modal embed (.pdf)
+  previewImage?: string;
+  previewFile?: string;
   detailDescription?: string;
 };
 
@@ -90,6 +90,28 @@ const workItems: WorkItem[] = [
     tags: ["Entrepreneurship", "Team", "Self-funded"],
     status: "Active",
   },
+  {
+    id: "python-beginners",
+    category: "certification",
+    title: "Python Generation: Beginners",
+    subtitle: "Stepik · Python Generation",
+    year: "2022",
+    description: "Completed with distinction. Final score 100%.",
+    tags: ["Python", "100%", "With Distinction"],
+    status: "Completed",
+    previewImage: "/previews/python-cert-1.png",
+  },
+  {
+    id: "python-advanced",
+    category: "certification",
+    title: "Python Generation: Advanced",
+    subtitle: "Stepik · Python Generation",
+    year: "2022",
+    description: "Completed with distinction. Final score 92%.",
+    tags: ["Python", "92%", "With Distinction"],
+    status: "Completed",
+    previewImage: "/previews/python-cert-2.png",
+  },
 ];
 
 function StatusBadge({ status }: { status: string }) {
@@ -115,6 +137,7 @@ export default function WorkShowcase() {
 
   const research = workItems.filter((w) => w.category === "research");
   const projects = workItems.filter((w) => w.category === "project");
+  const certs = workItems.filter((w) => w.category === "certification");
 
   const Card = ({ item }: { item: WorkItem }) => (
     <div
@@ -176,6 +199,16 @@ export default function WorkShowcase() {
             <SpoilerSection key={item.id}>
               <Card item={item} />
             </SpoilerSection>
+          ))}
+        </div>
+      </section>
+
+      {/* Certifications */}
+      <section className="mt-12">
+        <SectionLabel>Certifications</SectionLabel>
+        <div className="grid grid-cols-2 gap-3">
+          {certs.map((item) => (
+            <Card key={item.id} item={item} />
           ))}
         </div>
       </section>
