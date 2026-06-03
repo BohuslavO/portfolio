@@ -27,7 +27,7 @@ const achievements = [
   },
   {
     label: "Member of the Ukrainian National Go Team",
-    detail: "baduk (2022)",
+    detail: "Baduk / Weiqi (2022)",
   },
 ];
 
