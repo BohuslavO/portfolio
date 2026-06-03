@@ -54,7 +54,7 @@ const workItems: WorkItem[] = [
     id: "gpl",
     category: "project",
     title: "Global Programming League",
-    subtitle: "Wellesley Public School × Ukrainian Science Lyceum",
+    subtitle: "Ukrainian Scientific Lyceum × USA Public Schools",
     year: "2025–Present",
     description:
       "Founded and run a free competitive programming league between US and Ukrainian students. 100+ participants across 2 countries.",
