@@ -34,7 +34,8 @@ const workItems: WorkItem[] = [
       "Authored and defended two research papers in artificial intelligence at Ukraine's national Junior Academy of Sciences. Papers went through peer review and national competition. Topics covered AI-based modeling and prediction systems. Both papers were defended at the national level — one of which placed 1st in the All-Ukrainian Competition of the Junior Academy of Sciences.",
     tags: ["Artificial Intelligence", "National Level", "1st Place"],
     status: "Defended",
-    previewFile: "/previews/research-poster.pdf",  // poster — shown in modal
+    previewImage: "/previews/research-poster-en.png",
+    previewFile: "/previews/research-poster-en.pdf",
   },
   {
     id: "algoverse",
