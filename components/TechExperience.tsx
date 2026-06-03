@@ -1,12 +1,12 @@
 import { SectionLabel } from "./Education";
 
 const items = [
-  { text: "3+ years in Unity (C#) — game development, starting age 11" },
-  { text: "Self-taught Python — automation, data analysis, AI model development" },
-  { text: "Developed and published AI-based projects (Kohonen neural network, time series forecasting)" },
-  { text: "Automatic Crypto Trading Telegram bot — project lead (2024)" },
-  { text: "JavaScript, HTML, CSS — web development" },
-  { text: "Java and C# — academic and personal projects" },
+  { title: "Unity (C#)", detail: "3+ years — game development, starting age 11" },
+  { title: "Python", detail: "Self-taught — automation, data analysis, AI model development" },
+  { title: "AI Projects", detail: "Kohonen neural network, time series forecasting — published" },
+  { title: "Crypto Trading Bot", detail: "Telegram bot — project lead (2024)" },
+  { title: "JavaScript / HTML / CSS", detail: "Web development" },
+  { title: "Java & C#", detail: "Academic and personal projects" },
 ];
 
 export default function TechExperience() {
@@ -14,15 +14,19 @@ export default function TechExperience() {
     <>
       <section>
         <SectionLabel>Technical Experience</SectionLabel>
-        <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-          <ul className="space-y-3">
-            {items.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-zinc-300">
-                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-purple-500/70" />
-                {item.text}
-              </li>
-            ))}
-          </ul>
+        <div className="space-y-3">
+          {items.map((item, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm"
+            >
+              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gradient-to-b from-purple-400 to-cyan-400" />
+              <div>
+                <p className="text-sm font-medium text-white">{item.title}</p>
+                <p className="text-xs text-zinc-500">{item.detail}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
