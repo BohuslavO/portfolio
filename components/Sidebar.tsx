@@ -25,7 +25,7 @@ export default function Sidebar() {
         <img
           src="/photo-handshake.jpg"
           alt="Bohuslav Onyshchuk"
-          className="h-full w-full rounded-full object-cover"
+          className="h-full w-full rounded-full object-cover scale-125 object-top"
           onError={(e) => {
             const el = e.currentTarget;
             el.style.display = "none";
