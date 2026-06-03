@@ -3,7 +3,6 @@
 const languages = [
   { name: "Ukrainian", level: "Native" },
   { name: "English", level: "Fluent" },
-  { name: "Russian", level: "Fluent" },
   { name: "Chinese", level: "HSK4" },
   { name: "Spanish", level: "Pre-Intermediate" },
 ];

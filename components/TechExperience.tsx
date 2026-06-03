@@ -19,7 +19,7 @@ export default function TechExperience() {
         <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
           <ul className="space-y-3">
             {items.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-zinc-400">
+              <li key={i} className="flex items-start gap-3 text-sm text-zinc-300">
                 <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-purple-500/70" />
                 {item.text}
               </li>
