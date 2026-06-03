@@ -17,7 +17,7 @@ const education = [
 
 export default function Education() {
   return (
-    <section>
+    <section id="education">
       <SectionLabel>Education</SectionLabel>
       <div className="space-y-3">
         {education.map((edu) => (

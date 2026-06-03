@@ -169,7 +169,7 @@ export default function WorkShowcase() {
   return (
     <>
       {/* Research */}
-      <section>
+      <section id="research">
         <SectionLabel>Research & Academic Work</SectionLabel>
         <div className="space-y-3">
           {research.map((item) => (
@@ -179,7 +179,7 @@ export default function WorkShowcase() {
       </section>
 
       {/* Projects */}
-      <section className="mt-12">
+      <section id="projects" className="mt-12">
         <SectionLabel>Projects</SectionLabel>
         <div className="space-y-3">
           {projects.map((item) => (

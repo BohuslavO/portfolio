@@ -33,7 +33,7 @@ const achievements = [
 
 export default function AchievementsNew() {
   return (
-    <section>
+    <section id="achievements">
       <SectionLabel>Leadership & Achievements</SectionLabel>
       <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
         <ul className="space-y-4">

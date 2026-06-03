@@ -17,9 +17,20 @@ const interests = [
 export default function Sidebar() {
   return (
     <aside className="lg:sticky lg:top-24 lg:w-60 lg:flex-shrink-0 self-start pb-12">
-      {/* Avatar */}
-      <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 text-xl font-bold text-white shadow-[0_0_30px_rgba(168,85,247,0.4)]">
-        BO
+      {/* Photo */}
+      <div className="mb-5 h-24 w-24 overflow-hidden rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 p-0.5 shadow-[0_0_30px_rgba(168,85,247,0.4)]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/photo.jpg"
+          alt="Bohuslav Onyshchuk"
+          className="h-full w-full rounded-full object-cover"
+          onError={(e) => {
+            const el = e.currentTarget;
+            el.style.display = "none";
+            el.parentElement!.classList.add("flex", "items-center", "justify-center");
+            el.parentElement!.innerHTML = '<span class="text-xl font-bold text-white">BO</span>';
+          }}
+        />
       </div>
 
       <h1 className="mb-0.5 text-lg font-bold text-white leading-tight">
