@@ -35,7 +35,7 @@ const workItems: WorkItem[] = [
       "Authored and defended two research papers in artificial intelligence at Ukraine's national Junior Academy of Sciences. Papers went through peer review and national competition. Topics covered AI-based modeling and prediction systems. Both papers were defended at the national level — one of which placed 1st in the All-Ukrainian Competition of the Junior Academy of Sciences.",
     tags: ["Artificial Intelligence", "National Level", "1st Place"],
     status: "Defended",
-    previewImage: "/previews/research-poster-en.png",
+    previewImage: "/previews/research-poster-new.png",
     previewFile: "/previews/research-poster-en.pdf",
   },
   {
@@ -64,6 +64,20 @@ const workItems: WorkItem[] = [
     tags: ["Founded", "100+ participants", "US & Ukraine"],
     status: "Active",
     previewImage: "/previews/GPL_OnePager_Wellesley.png",
+  },
+  {
+    id: "crypto-bot",
+    category: "project",
+    title: "Crypto Trading Bot",
+    subtitle: "Automated trading via Telegram",
+    year: "2024",
+    description:
+      "Built an automated cryptocurrency trading bot with a Telegram interface. Led the project end-to-end — architecture, trading logic, and deployment.",
+    detailDescription:
+      "Designed and built an automated crypto trading bot controllable via Telegram. Handled strategy logic, real-time market data processing, and bot deployment. Led the project from idea to working product.",
+    tags: ["Python", "Crypto", "Automation", "Project Lead"],
+    status: "Completed",
+    previewFile: "/previews/crypto-bot-presentation.pdf",
   },
   {
     id: "clothing",
