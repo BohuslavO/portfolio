@@ -61,7 +61,7 @@ const workItems: WorkItem[] = [
       "Founded GPL — a free, weekly competitive programming league connecting students at Wellesley and top Ukrainian science lyceums. Students compete across Novice, Intermediate, and Advanced tracks. Weekly 24-hour contests, bilingual solution editorials (English/Ukrainian), live leaderboard, monthly in-person review sessions. 100+ participants across 2 countries.",
     tags: ["Founded", "100+ participants", "US & Ukraine", "$0 fee"],
     status: "Active",
-    previewFile: "/previews/gpl-one-pager.pdf",  // drop GPL One Pager PDF here
+    previewImage: "/previews/GPL_OnePager_Wellesley.png",
   },
   {
     id: "clothing",
