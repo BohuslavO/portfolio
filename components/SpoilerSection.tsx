@@ -58,9 +58,9 @@ export function SpoilerSection({ children }: { children: React.ReactNode }) {
         const dx = p.x - cx;
         const dy = p.y - cy;
         const d = Math.sqrt(dx * dx + dy * dy) || 1;
-        const spd = 2.5 + Math.random() * 6;
-        p.vx = (dx / d) * spd + (Math.random() - 0.5) * 3;
-        p.vy = (dy / d) * spd + (Math.random() - 0.5) * 3;
+        const spd = 0.6 + Math.random() * 1.8;
+        p.vx = (dx / d) * spd + (Math.random() - 0.5) * 1;
+        p.vy = (dy / d) * spd + (Math.random() - 0.5) * 1;
       }
     };
 
@@ -72,9 +72,9 @@ export function SpoilerSection({ children }: { children: React.ReactNode }) {
 
       for (const p of ps) {
         if (bursting) {
-          p.vx *= 1.035;
-          p.vy *= 1.035;
-          p.alpha -= 0.016; // slow, graceful fade
+          p.vx *= 1.01;
+          p.vy *= 1.01;
+          p.alpha -= 0.007; // very slow, whisper fade
         } else {
           p.vx += (Math.random() - 0.5) * 0.02;
           p.vy += (Math.random() - 0.5) * 0.02;
