@@ -5,7 +5,7 @@ import "./globals.css";
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
 export const metadata: Metadata = {
-  title: "Bohuslav Onyshchuk",
+  title: "Bohuslav Onyshchuk — Portfolio",
   description:
     "Builder, researcher, and founder from Ukraine. AI research, competitive programming, and entrepreneurship.",
 };
