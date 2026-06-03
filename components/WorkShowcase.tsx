@@ -34,8 +34,7 @@ const workItems: WorkItem[] = [
       "Authored and defended two research papers in artificial intelligence at Ukraine's national Junior Academy of Sciences. Papers went through peer review and national competition. Topics covered AI-based modeling and prediction systems. Both papers were defended at the national level — one of which placed 1st in the All-Ukrainian Competition of the Junior Academy of Sciences.",
     tags: ["Artificial Intelligence", "National Level", "1st Place"],
     status: "Defended",
-    previewImage: "/previews/research-poster.jpg", // drop a screenshot/thumbnail here
-    previewFile: "/previews/research-paper.pdf",   // drop the actual PDF here
+    previewFile: "/previews/research-poster.pdf",  // poster — shown in modal
   },
   {
     id: "algoverse",
@@ -62,8 +61,7 @@ const workItems: WorkItem[] = [
       "Founded GPL — a free, weekly competitive programming league connecting students at Wellesley and top Ukrainian science lyceums. Students compete across Novice, Intermediate, and Advanced tracks. Weekly 24-hour contests, bilingual solution editorials (English/Ukrainian), live leaderboard, monthly in-person review sessions. 100+ participants across 2 countries.",
     tags: ["Founded", "100+ participants", "US & Ukraine", "$0 fee"],
     status: "Active",
-    previewImage: "/previews/gpl-one-pager.jpg", // drop a screenshot/thumbnail here
-    previewFile: "/previews/gpl-one-pager.pdf",  // drop the PDF here
+    previewFile: "/previews/gpl-one-pager.pdf",  // drop GPL One Pager PDF here
   },
   {
     id: "clothing",
@@ -133,25 +131,33 @@ export default function WorkShowcase() {
             ))}
           </div>
         </div>
-        {item.previewImage && (
+        {(item.previewImage || item.previewFile) && (
           <div className="flex-shrink-0 rounded-md bg-white/5 px-2 py-1 text-xs text-zinc-600 transition-colors group-hover:text-purple-400">
-            hover →
+            preview →
           </div>
         )}
       </div>
 
       {/* Hover preview — floats above the card */}
-      {hoveredId === item.id && item.previewImage && (
-        <div className="pointer-events-none absolute bottom-full left-0 z-50 mb-3 w-80 overflow-hidden rounded-xl border border-purple-500/30 bg-zinc-950 shadow-[0_0_40px_rgba(168,85,247,0.25)] ring-1 ring-white/10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={item.previewImage}
-            alt={`${item.title} preview`}
-            className="w-full"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = "none";
-            }}
-          />
+      {hoveredId === item.id && (item.previewImage || item.previewFile) && (
+        <div className="pointer-events-none absolute bottom-full left-0 z-50 mb-3 w-72 overflow-hidden rounded-xl border border-purple-500/30 bg-zinc-950 shadow-[0_0_40px_rgba(168,85,247,0.25)] ring-1 ring-white/10">
+          {item.previewImage ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={item.previewImage}
+              alt={`${item.title} preview`}
+              className="w-full"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+            />
+          ) : (
+            <div className="flex items-center gap-3 px-4 py-5">
+              <span className="text-3xl">📄</span>
+              <div>
+                <p className="text-sm font-medium text-white">{item.title}</p>
+                <p className="text-xs text-zinc-500">PDF available</p>
+              </div>
+            </div>
+          )}
           <div className="border-t border-white/10 px-3 py-2">
             <p className="text-xs text-zinc-500">Click to open full view</p>
           </div>
