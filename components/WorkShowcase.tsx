@@ -67,16 +67,16 @@ const workItems: WorkItem[] = [
   },
   {
     id: "crypto-bot",
-    category: "project",
-    title: "Crypto Trading Bot",
-    subtitle: "Automated trading via Telegram",
+    category: "research",
+    title: "Crypto Trading Bot — Research",
+    subtitle: "Academic scientific research",
     year: "2024",
     description:
-      "Built an automated cryptocurrency trading bot with a Telegram interface. Led the project end-to-end — architecture, trading logic, and deployment.",
+      "Researched, built, and defended an automated cryptocurrency trading bot. Academic paper defended at school level.",
     detailDescription:
-      "Designed and built an automated crypto trading bot controllable via Telegram. Handled strategy logic, real-time market data processing, and bot deployment. Led the project from idea to working product.",
-    tags: ["Python", "Crypto", "Automation", "Project Lead"],
-    status: "Completed",
+      "Conducted academic research into automated cryptocurrency trading systems. Designed and implemented a working trading bot with a Telegram interface — handling strategy logic, real-time market data, and deployment. Research was written up and defended as a scientific paper.",
+    tags: ["Python", "Crypto", "Automation", "Defended"],
+    status: "Defended",
     previewFile: "/previews/crypto-bot-presentation.pdf",
   },
   {
@@ -118,7 +118,7 @@ export default function WorkShowcase() {
 
   const Card = ({ item }: { item: WorkItem }) => (
     <div
-      className="relative cursor-pointer rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all hover:border-purple-500/50 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]"
+      className="glow-card relative cursor-pointer rounded-xl border border-purple-500/20 bg-white/5 p-5 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.25)]"
       onClick={() => setActiveModal(item)}
     >
       <div className="flex items-start justify-between gap-4">

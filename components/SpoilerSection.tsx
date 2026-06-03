@@ -78,7 +78,7 @@ export function SpoilerSection({ children }: { children: React.ReactNode }) {
       {/* Overlay */}
       {phase !== "done" && (
         <div
-          className="absolute inset-0 z-10 rounded-xl overflow-hidden"
+          className={`absolute inset-0 z-10 rounded-xl overflow-hidden ${phase === "idle" ? "glow-card" : ""}`}
           onClick={handleClick}
           style={{
             cursor: phase === "idle" ? "pointer" : "default",

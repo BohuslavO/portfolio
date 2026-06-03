@@ -12,3 +12,12 @@ body {
     linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(168, 85, 247, 0.15), 0 0 0 1px rgba(168, 85, 247, 0.12); }
+  50%       { box-shadow: 0 0 18px rgba(168, 85, 247, 0.35), 0 0 0 1px rgba(168, 85, 247, 0.28); }
+}
+
+.glow-card {
+  animation: glow-pulse 2.8s ease-in-out infinite;
+}
