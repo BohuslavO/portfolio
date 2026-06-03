@@ -23,7 +23,7 @@ export default function Sidebar() {
       <div className="mb-5 h-40 w-40 overflow-hidden rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 p-0.5 shadow-[0_0_30px_rgba(168,85,247,0.4)]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/photo.png"
+          src="/photo-handshake.jpg"
           alt="Bohuslav Onyshchuk"
           className="h-full w-full rounded-full object-cover"
           onError={(e) => {
