@@ -1,21 +1,25 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Projects from "@/components/Projects";
-import Research from "@/components/Research";
-import Achievements from "@/components/Achievements";
-import Contact from "@/components/Contact";
+import Sidebar from "@/components/Sidebar";
+import Education from "@/components/Education";
+import WorkShowcase from "@/components/WorkShowcase";
+import AchievementsNew from "@/components/AchievementsNew";
+import TechExperience from "@/components/TechExperience";
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen">
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Research />
-      <Achievements />
-      <Contact />
+      <div className="mx-auto max-w-6xl px-6 pt-24 pb-24">
+        <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+          <Sidebar />
+          <div className="flex-1 min-w-0 space-y-14">
+            <Education />
+            <WorkShowcase />
+            <AchievementsNew />
+            <TechExperience />
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
