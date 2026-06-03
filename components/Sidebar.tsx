@@ -7,12 +7,13 @@ const languages = [
   { name: "Spanish", level: "Pre-Intermediate" },
 ];
 
-const interests = [
-  "Artificial Intelligence",
-  "Strategic Systems",
-  "Algorithmic Problem Solving",
-  "Entrepreneurship",
-  "Financial Technologies & Quantitative Systems",
+const skills = [
+  { name: "Python", level: "Advanced" },
+  { name: "C# / Unity", level: "Advanced" },
+  { name: "JavaScript / TS", level: "Intermediate" },
+  { name: "Java", level: "Intermediate" },
+  { name: "HTML / CSS", level: "Intermediate" },
+  { name: "Next.js / React", level: "Intermediate" },
 ];
 
 export default function Sidebar() {
@@ -79,19 +80,19 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Interests */}
+      {/* Skills */}
       <div>
         <h3 className="mb-3 text-[10px] font-semibold uppercase tracking-widest text-zinc-600">
-          Interests
+          Skills
         </h3>
-        <ul className="space-y-1.5">
-          {interests.map((interest) => (
-            <li key={interest} className="flex items-start gap-2 text-xs text-zinc-400">
-              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-purple-500" />
-              {interest}
-            </li>
+        <div className="space-y-2">
+          {skills.map((skill) => (
+            <div key={skill.name} className="flex items-center justify-between">
+              <span className="text-sm text-zinc-300">{skill.name}</span>
+              <span className="text-xs text-zinc-600">{skill.level}</span>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </aside>
   );
