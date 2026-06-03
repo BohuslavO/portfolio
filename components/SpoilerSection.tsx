@@ -34,30 +34,19 @@ export function SpoilerSection({ children }: { children: React.ReactNode }) {
     const cx = W / 2;
     const cy = H / 2;
 
-    // Purple, cyan, white — matching site palette
-    const COLORS = [
-      [200, 150, 255],
-      [100, 220, 255],
-      [255, 255, 255],
-    ];
-
     type P = {
       x: number; y: number;
       vx: number; vy: number;
       alpha: number;
-      rgb: number[];
-      size: number;
     };
 
-    const count = Math.max(280, Math.floor((W0 * H0) / 50));
+    const count = Math.max(220, Math.floor((W0 * H0) / 65));
     const ps: P[] = Array.from({ length: count }, () => ({
       x: PAD + Math.random() * W0,
       y: PAD + Math.random() * H0,
-      vx: (Math.random() - 0.5) * 0.65,
-      vy: (Math.random() - 0.5) * 0.65,
-      alpha: Math.random() * 0.75 + 0.15,
-      rgb: COLORS[Math.floor(Math.random() * COLORS.length)],
-      size: 1 + Math.random() * 1.2,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      alpha: Math.random() * 0.6 + 0.1,
     }));
 
     let bursting = false;
@@ -69,9 +58,9 @@ export function SpoilerSection({ children }: { children: React.ReactNode }) {
         const dx = p.x - cx;
         const dy = p.y - cy;
         const d = Math.sqrt(dx * dx + dy * dy) || 1;
-        const spd = 6 + Math.random() * 15;
-        p.vx = (dx / d) * spd + (Math.random() - 0.5) * 7;
-        p.vy = (dy / d) * spd + (Math.random() - 0.5) * 7;
+        const spd = 2.5 + Math.random() * 6;
+        p.vx = (dx / d) * spd + (Math.random() - 0.5) * 3;
+        p.vy = (dy / d) * spd + (Math.random() - 0.5) * 3;
       }
     };
 
@@ -83,19 +72,19 @@ export function SpoilerSection({ children }: { children: React.ReactNode }) {
 
       for (const p of ps) {
         if (bursting) {
-          p.vx *= 1.07;
-          p.vy *= 1.07;
-          p.alpha -= 0.038;
+          p.vx *= 1.035;
+          p.vy *= 1.035;
+          p.alpha -= 0.016; // slow, graceful fade
         } else {
-          p.vx += (Math.random() - 0.5) * 0.04;
-          p.vy += (Math.random() - 0.5) * 0.04;
+          p.vx += (Math.random() - 0.5) * 0.02;
+          p.vy += (Math.random() - 0.5) * 0.02;
           // wrap within card region
           if (p.x < PAD) p.x = PAD + W0;
           if (p.x > PAD + W0) p.x = PAD;
           if (p.y < PAD) p.y = PAD + H0;
           if (p.y > PAD + H0) p.y = PAD;
-          p.alpha += (Math.random() - 0.5) * 0.06;
-          p.alpha = Math.max(0.05, Math.min(0.85, p.alpha));
+          p.alpha += (Math.random() - 0.5) * 0.04;
+          p.alpha = Math.max(0.04, Math.min(0.7, p.alpha));
         }
 
         p.x += p.vx;
@@ -103,9 +92,12 @@ export function SpoilerSection({ children }: { children: React.ReactNode }) {
 
         if (p.alpha > 0.01) {
           anyVisible = true;
-          const [r, g, b] = p.rgb;
-          ctx.fillStyle = `rgba(${r},${g},${b},${Math.max(0, p.alpha)})`;
-          ctx.fillRect(p.x, p.y, p.size, p.size);
+          const a = Math.max(0, p.alpha);
+          // soft glow: larger faint halo + small bright core
+          ctx.fillStyle = `rgba(255,255,255,${a * 0.25})`;
+          ctx.fillRect(p.x - 1, p.y - 1, 3, 3);
+          ctx.fillStyle = `rgba(255,255,255,${a})`;
+          ctx.fillRect(p.x, p.y, 0.8, 0.8);
         }
       }
 
