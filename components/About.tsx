@@ -10,7 +10,7 @@ export default function About() {
     <section id="about">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-sm transition-all hover:border-purple-500/40 hover:bg-white/8 mb-5 cursor-pointer select-none"
+        className="w-full flex items-center justify-center gap-2 rounded-xl border border-purple-500/20 bg-white/5 px-6 py-4 backdrop-blur-sm transition-all hover:border-purple-500/50 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)] mb-5 cursor-pointer select-none"
       >
         <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-sm font-medium tracking-widest text-transparent uppercase">
           About Me
