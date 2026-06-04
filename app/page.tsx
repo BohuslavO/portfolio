@@ -4,8 +4,6 @@ import About from "@/components/About";
 import Education from "@/components/Education";
 import WorkShowcase from "@/components/WorkShowcase";
 import AchievementsNew from "@/components/AchievementsNew";
-import TechExperience from "@/components/TechExperience";
-
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -18,7 +16,6 @@ export default function Home() {
             <Education />
             <WorkShowcase />
             <AchievementsNew />
-            <TechExperience />
           </div>
         </div>
       </div>

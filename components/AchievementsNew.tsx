@@ -31,18 +31,16 @@ export default function AchievementsNew() {
   return (
     <section id="achievements">
       <SectionLabel>Leadership & Achievements</SectionLabel>
-      <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-        <ul className="space-y-4">
-          {achievements.map((item, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gradient-to-b from-purple-400 to-cyan-400" />
-              <div>
-                <p className="text-sm font-medium text-white">{item.label}</p>
-                <p className="text-xs text-zinc-500">{item.detail}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className="grid grid-cols-3 gap-3">
+        {achievements.map((item, i) => (
+          <div
+            key={i}
+            className="rounded-xl border border-purple-500/20 bg-purple-500/8 p-4 backdrop-blur-sm transition-colors hover:border-purple-500/40 hover:bg-purple-500/12"
+          >
+            <p className="text-sm font-medium text-white">{item.label}</p>
+            <p className="text-[10px] text-zinc-500 mt-1">{item.detail}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
