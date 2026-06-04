@@ -5,27 +5,21 @@ import { useState, useEffect, useRef } from "react";
 const PASSWORD = "Bohuslav2026";
 
 export default function PasswordGate({ children }: { children: React.ReactNode }) {
-  const [auth, setAuth] = useState<boolean | null>(null);
+  const [auth, setAuth] = useState(false);
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [shake, setShake] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    setAuth(localStorage.getItem("portfolio_auth") === "1");
-  }, []);
-
   // Focus input on mount
   useEffect(() => {
-    if (auth === false) inputRef.current?.focus();
-  }, [auth]);
+    inputRef.current?.focus();
+  }, []);
 
-  if (auth === null) return null; // loading flash prevention
   if (auth) return <>{children}</>;
 
   const submit = () => {
     if (value === PASSWORD) {
-      localStorage.setItem("portfolio_auth", "1");
       setAuth(true);
     } else {
       setError(true);
