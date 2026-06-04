@@ -8,19 +8,21 @@ export default function About() {
 
   return (
     <section id="about">
-      <div
-        className="flex items-center justify-between cursor-pointer select-none mb-5"
+      <button
         onClick={() => setOpen((o) => !o)}
+        className="w-full flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-sm transition-all hover:border-purple-500/40 hover:bg-white/8 mb-5 cursor-pointer select-none"
       >
-        <SectionLabel>About</SectionLabel>
+        <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-sm font-medium tracking-widest text-transparent uppercase">
+          About Me
+        </span>
         <span
-          className={`text-zinc-500 transition-transform duration-300 text-xs mb-5 ${
+          className={`text-zinc-500 transition-transform duration-300 text-xs ${
             open ? "rotate-180" : ""
           }`}
         >
           ▼
         </span>
-      </div>
+      </button>
 
       <div
         className={`overflow-hidden transition-all duration-400 ease-in-out ${
