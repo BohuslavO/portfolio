@@ -42,16 +42,6 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
       />
 
       <div className="relative w-full max-w-sm">
-        {/* Name */}
-        <h1 className="mb-1 text-center text-2xl font-bold tracking-tight">
-          <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            Bohuslav Onyshchuk
-          </span>
-        </h1>
-        <p className="mb-10 text-center text-xs text-zinc-600 tracking-widest uppercase">
-          Portfolio
-        </p>
-
         {/* Card */}
         <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
           <p className="mb-5 text-center text-sm text-zinc-400">Enter password to continue</p>
