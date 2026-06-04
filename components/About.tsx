@@ -15,13 +15,6 @@ export default function About() {
         <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-sm font-medium tracking-widest text-transparent uppercase">
           About Me
         </span>
-        <span
-          className={`text-zinc-500 transition-transform duration-300 text-xs ${
-            open ? "rotate-180" : ""
-          }`}
-        >
-          ▼
-        </span>
       </button>
 
       <div
