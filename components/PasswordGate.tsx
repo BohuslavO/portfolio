@@ -12,7 +12,7 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    setAuth(sessionStorage.getItem("portfolio_auth") === "1");
+    setAuth(localStorage.getItem("portfolio_auth") === "1");
   }, []);
 
   // Focus input on mount
@@ -25,7 +25,7 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
 
   const submit = () => {
     if (value === PASSWORD) {
-      sessionStorage.setItem("portfolio_auth", "1");
+      localStorage.setItem("portfolio_auth", "1");
       setAuth(true);
     } else {
       setError(true);
