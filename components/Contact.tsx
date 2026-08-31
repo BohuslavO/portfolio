@@ -22,6 +22,17 @@ export default function Contact() {
             github.com/BohuslavO
           </span>
         </a>
+        <a
+          href="https://www.linkedin.com/in/bohuslav-onyshchuk-6329803b8/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-4"
+        >
+          <span className="w-20 text-xs text-zinc-600">LinkedIn</span>
+          <span className="text-sm text-zinc-300 transition-colors group-hover:text-white">
+            linkedin.com/in/bohuslav-onyshchuk
+          </span>
+        </a>
         <div className="flex items-center gap-4">
           <span className="w-20 text-xs text-zinc-600">Phone</span>
           <span className="text-sm text-zinc-600">+1 (857) 576-9569</span>

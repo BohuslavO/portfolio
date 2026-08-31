@@ -13,11 +13,37 @@ body {
   background-size: 60px 60px;
 }
 
-@keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 8px rgba(168, 85, 247, 0.15), 0 0 0 1px rgba(168, 85, 247, 0.12); }
-  50%       { box-shadow: 0 0 18px rgba(168, 85, 247, 0.35), 0 0 0 1px rgba(168, 85, 247, 0.28); }
+@keyframes beam-travel {
+  to { offset-distance: 100%; }
 }
 
-.glow-card {
-  animation: glow-pulse 2.8s ease-in-out infinite;
+/* Outer shell — only the 1.5px gap is visible, inner card covers the rest */
+.beam-card {
+  position: relative;
+  padding: 1.5px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+/* The traveling light — sits below inner card, only shows at border gap */
+.beam-light {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.95) 0%, rgba(56, 189, 248, 0.5) 40%, transparent 70%);
+  filter: blur(10px);
+  offset-path: rect(0% 100% 100% 0% round 0.75rem);
+  offset-distance: 0%;
+  offset-anchor: 50% 50%;
+  animation: beam-travel 3.5s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Inner card — covers beam in center, only gap at border shows through */
+.beam-inner {
+  position: relative;
+  z-index: 2;
+  border-radius: calc(0.75rem - 1.5px);
+  height: 100%;
 }

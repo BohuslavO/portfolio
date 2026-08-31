@@ -20,7 +20,7 @@ export default function Sidebar() {
   return (
     <aside className="lg:sticky lg:top-24 lg:w-60 lg:flex-shrink-0 self-start pb-12 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
       {/* Photo */}
-      <div className="mb-5 h-40 w-40 overflow-hidden rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 p-0.5 shadow-[0_0_30px_rgba(168,85,247,0.4)]">
+      <div className="mb-5 h-40 w-40 overflow-hidden rounded-full bg-gradient-to-br from-cyan-500 to-cyan-500 p-0.5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/photo-handshake.jpg"

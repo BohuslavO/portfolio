@@ -5,11 +5,9 @@ import Education from "@/components/Education";
 import WorkShowcase from "@/components/WorkShowcase";
 import AchievementsNew from "@/components/AchievementsNew";
 import Contact from "@/components/Contact";
-import PasswordGate from "@/components/PasswordGate";
 
 export default function Home() {
   return (
-    <PasswordGate>
     <main className="min-h-screen">
       <Navbar />
       <div className="mx-auto max-w-6xl px-6 pt-24 pb-24">
@@ -18,13 +16,13 @@ export default function Home() {
           <div className="flex-1 min-w-0 space-y-14">
             <About />
             <Education />
-            <WorkShowcase />
+            <WorkShowcase section="research" />
             <AchievementsNew />
+            <WorkShowcase section="projects" />
             <Contact />
           </div>
         </div>
       </div>
     </main>
-    </PasswordGate>
   );
 }

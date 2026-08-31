@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { SectionLabel } from "./Education";
-import { SpoilerSection } from "./SpoilerSection";
 
 type WorkItem = {
   id: string;
@@ -24,32 +23,33 @@ function isPDF(path: string) {
 
 const workItems: WorkItem[] = [
   {
-    id: "jas-papers",
+    id: "research-timeseries",
     category: "research",
-    title: "AI Research Papers (×2)",
+    title: "Scientific Research: Forecasting the Behavior of Time Series Using Machine Learning Algorithms built from scratch",
     subtitle: "Ukrainian Junior Academy of Sciences",
-    year: "2024–2025",
+    year: "October–May 2024",
     description:
-      "Two defended research papers in AI, presented at Ukraine's national Junior Academy of Sciences competitions.",
+      "Defended research paper on time series forecasting using ML algorithms built from scratch. 4th place at Ukraine's national Junior Academy of Sciences competition.",
     detailDescription:
-      "Authored and defended two research papers in artificial intelligence at Ukraine's national Junior Academy of Sciences. Papers went through peer review and national competition. Topics covered AI-based modeling and prediction systems. Both papers were defended at the national level — one of which placed 1st in the All-Ukrainian Competition of the Junior Academy of Sciences.",
-    tags: ["Artificial Intelligence", "National Level", "1st Place"],
+      "Researched and developed original machine learning algorithms from scratch for forecasting time series behavior. Paper was written up, peer-reviewed, and defended at Ukraine's national Junior Academy of Sciences competition, placing 4th at the national level.",
+    tags: ["Machine Learning", "Time Series", "National Level", "4th Place"],
     status: "Defended",
     previewImage: "/previews/research-poster-new.png",
     previewFile: "/previews/research-poster-en.pdf",
   },
   {
-    id: "algoverse",
+    id: "compjailbench",
     category: "research",
-    title: "Algoverse AI Research",
-    subtitle: "Algoverse AI Research Program",
+    title: "Scientific Research: CompJailBench — Benchmarking Distributed Jailbreaks in Multi-Agent LLM Systems",
+    subtitle: "AI Research Mentorship Program",
     year: "Jun–Aug 2026",
     description:
-      "Selective AI research mentorship program. Building original research under expert guidance, targeting NeurIPS submission.",
+      "Inspect-based benchmark evaluating distributed jailbreaks and the safety monitors meant to catch them across multi-agent LLM systems.",
     detailDescription:
-      "Enrolled in Algoverse's selective AI research mentorship program, working directly with a research mentor to develop an original AI paper. Target conference: NeurIPS — one of the top AI venues globally. Program runs June 7–August 30, 2026. Chosen from a competitive applicant pool. Financial aid negotiated.",
-    tags: ["AI Research", "NeurIPS Target", "Mentored", "Selective"],
+      "Built COMPJAILBENCH, an Inspect-based benchmark for distributed jailbreaks in multi-agent LLM systems — where a harmful request is adversarially split into individually benign-looking subtasks, routed across agents, and recombined into an unsafe output. Benchmarked four MAS safety methods (local agent-level checks, activation probing, agentic oversight, and agent-to-agent interaction monitors) against four distinct attack surfaces to measure when local safety fails to imply global safety. Developed through a selective AI research mentorship program, working directly with a research mentor.",
+    tags: ["AI Safety", "Multi-Agent Systems", "Mentored"],
     status: "In Progress",
+    previewFile: "/previews/compjailbench.pdf",
   },
   {
     id: "gpl",
@@ -66,16 +66,16 @@ const workItems: WorkItem[] = [
     previewImage: "/previews/GPL_OnePager_Wellesley.png",
   },
   {
-    id: "crypto-bot",
+    id: "research-cryptobot",
     category: "research",
-    title: "Crypto Trading Bot — Research",
-    subtitle: "Academic scientific research",
-    year: "2024",
+    title: "Scientific Research: Automatic Crypto-Trading Telegram Bot",
+    subtitle: "Ukrainian Junior Academy of Sciences",
+    year: "October–May 2023",
     description:
-      "Researched, built, and defended an automated cryptocurrency trading bot. Academic paper defended at school level.",
+      "Defended research paper on an automated crypto-trading bot with Telegram interface. 1st place at Ukraine's All-Ukrainian Junior Academy of Sciences competition.",
     detailDescription:
-      "Conducted academic research into automated cryptocurrency trading systems. Designed and implemented a working trading bot with a Telegram interface — handling strategy logic, real-time market data, and deployment. Research was written up and defended as a scientific paper.",
-    tags: ["Python", "Crypto", "Automation", "Defended"],
+      "Researched and built an automated cryptocurrency trading system with a Telegram bot interface — covering strategy logic, real-time market data, and deployment. Research paper written up and defended at Ukraine's national Junior Academy of Sciences, placing 1st at the All-Ukrainian Competition.",
+    tags: ["Python", "Crypto", "Automation", "1st Place"],
     status: "Defended",
     previewFile: "/previews/crypto-bot-presentation.pdf",
   },
@@ -117,7 +117,7 @@ const workItems: WorkItem[] = [
 function StatusBadge({ status }: { status: string }) {
   const colors: Record<string, string> = {
     Active: "bg-emerald-500/15 text-emerald-400",
-    "In Progress": "bg-purple-500/15 text-purple-400",
+    "In Progress": "bg-cyan-500/15 text-cyan-400",
     Completed: "bg-blue-500/15 text-blue-400",
     Defended: "bg-emerald-500/15 text-emerald-400",
   };
@@ -132,7 +132,7 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
-export default function WorkShowcase() {
+export default function WorkShowcase({ section = "all" }: { section?: "research" | "projects" | "all" }) {
   const [activeModal, setActiveModal] = useState<WorkItem | null>(null);
 
   const research = workItems.filter((w) => w.category === "research");
@@ -141,9 +141,9 @@ export default function WorkShowcase() {
 
   const Card = ({ item }: { item: WorkItem }) => (
     <div
-      className={`relative cursor-pointer rounded-xl border bg-white/5 p-5 backdrop-blur-sm transition-all hover:border-purple-500/60 hover:shadow-[0_0_30px_rgba(168,85,247,0.25)] ${
+      className={`relative cursor-pointer rounded-xl border bg-white/5 p-5 backdrop-blur-sm transition-all hover:border-cyan-500/60 ${
         (item.previewImage || item.previewFile)
-          ? "glow-card border-purple-500/30"
+          ? "border-cyan-500/30"
           : "border-white/10"
       }`}
       onClick={() => setActiveModal(item)}
@@ -172,12 +172,12 @@ export default function WorkShowcase() {
           </div>
         </div>
         {(item.previewImage || item.previewFile) && (
-          <div className="flex-shrink-0 flex items-center gap-1.5 rounded-lg border border-purple-500/40 bg-purple-500/15 px-3 py-1.5 text-xs font-medium text-purple-300 transition-all hover:bg-purple-500/25 hover:border-purple-500/70">
+          <div className="flex-shrink-0 flex items-center gap-1.5 rounded-lg border border-cyan-500/40 bg-cyan-500/15 px-3 py-1.5 text-xs font-medium text-cyan-300 transition-all hover:bg-cyan-500/25 hover:border-cyan-500/70">
             <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
             </svg>
-            Preview
+            Click to show
           </div>
         )}
       </div>
@@ -188,38 +188,28 @@ export default function WorkShowcase() {
   return (
     <>
       {/* Research */}
-      <section id="research">
-        <SectionLabel>Research & Academic Work</SectionLabel>
-        <div className="space-y-3">
-          {research.map((item) => (
-            <SpoilerSection key={item.id}>
-              <Card item={item} />
-            </SpoilerSection>
-          ))}
-        </div>
-      </section>
+      {(section === "all" || section === "research") && (
+        <section id="research">
+          <SectionLabel>Research & Academic Work</SectionLabel>
+          <div className="space-y-3">
+            {research.map((item) => (
+              <Card key={item.id} item={item} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Projects */}
-      <section id="projects" className="mt-12">
-        <SectionLabel>Projects</SectionLabel>
-        <div className="space-y-3">
-          {projects.map((item) => (
-            <SpoilerSection key={item.id}>
-              <Card item={item} />
-            </SpoilerSection>
-          ))}
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="mt-12">
-        <SectionLabel>Certifications</SectionLabel>
-        <div className="grid grid-cols-2 gap-3">
-          {certs.map((item) => (
-            <Card key={item.id} item={item} />
-          ))}
-        </div>
-      </section>
+      {(section === "all" || section === "projects") && (
+        <section id="projects">
+          <SectionLabel>Projects</SectionLabel>
+          <div className="space-y-3">
+            {projects.map((item) => (
+              <Card key={item.id} item={item} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Modal overlay */}
       {activeModal && (
