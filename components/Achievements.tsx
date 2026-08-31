@@ -38,7 +38,7 @@ export default function Achievements() {
           {achievements.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-purple-500/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.12)]"
+              className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-purple-500/40"
             >
               <div className="mb-3 text-2xl">{item.icon}</div>
               <h3 className="mb-1 font-semibold text-white">{item.title}</h3>

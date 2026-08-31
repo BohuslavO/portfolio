@@ -1,8 +1,7 @@
 export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Background glow orbs */}
-      <div className="pointer-events-none absolute -top-40 right-0 h-[600px] w-[600px] rounded-full bg-purple-600/20 blur-[120px]" />
+      {/* Background accent */}
       <div className="pointer-events-none absolute bottom-0 -left-40 h-[500px] w-[500px] rounded-full bg-cyan-600/15 blur-[120px]" />
 
       <div className="relative mx-auto max-w-5xl px-6 py-32">
@@ -21,7 +20,7 @@ export default function Hero() {
         <div className="flex flex-wrap gap-4">
           <a
             href="#projects"
-            className="rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 px-6 py-3 text-sm font-medium text-white shadow-[0_0_25px_rgba(168,85,247,0.4)] transition-all hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] hover:scale-105"
+            className="rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 px-6 py-3 text-sm font-medium text-white transition-all hover:scale-105"
           >
             See my work
           </a>

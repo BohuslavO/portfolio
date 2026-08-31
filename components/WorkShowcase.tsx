@@ -103,7 +103,7 @@ export default function WorkShowcase() {
 
   const Card = ({ item }: { item: WorkItem }) => (
     <div
-      className="relative cursor-pointer rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all hover:border-purple-500/50 hover:shadow-[0_0_25px_rgba(168,85,247,0.15)]"
+      className="relative cursor-pointer rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all hover:border-purple-500/50"
       onClick={() => setActiveModal(item)}
       onMouseEnter={() => setHoveredId(item.id)}
       onMouseLeave={() => setHoveredId(null)}
@@ -140,7 +140,7 @@ export default function WorkShowcase() {
 
       {/* Hover preview — floats above the card */}
       {hoveredId === item.id && (item.previewImage || item.previewFile) && (
-        <div className="pointer-events-none absolute bottom-full left-0 z-50 mb-3 w-72 overflow-hidden rounded-xl border border-purple-500/30 bg-zinc-950 shadow-[0_0_40px_rgba(168,85,247,0.25)] ring-1 ring-white/10">
+        <div className="pointer-events-none absolute bottom-full left-0 z-50 mb-3 w-72 overflow-hidden rounded-xl border border-purple-500/30 bg-zinc-950 ring-1 ring-white/10">
           {item.previewImage ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img

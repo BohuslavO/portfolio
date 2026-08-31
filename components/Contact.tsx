@@ -19,9 +19,6 @@ const links = [
 export default function Contact() {
   return (
     <section id="contact" className="relative border-t border-white/10 py-24 overflow-hidden">
-      {/* Subtle background orb */}
-      <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-purple-600/10 blur-[100px]" />
-
       <div className="relative mx-auto max-w-5xl px-6">
         <p className="mb-3 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-sm font-medium tracking-widest text-transparent uppercase">
           Contact
