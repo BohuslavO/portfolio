@@ -9,13 +9,7 @@ const links = [
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#050510]/70 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2.5">
-        <a
-          href="#"
-          className="bg-gradient-to-r from-cyan-400 to-cyan-400 bg-clip-text text-base font-bold tracking-tight text-transparent"
-        >
-          Bohuslav Onyshchuk
-        </a>
+      <nav className="mx-auto flex max-w-6xl items-center justify-end px-6 py-2.5">
         <ul className="hidden sm:flex items-center gap-8">
           {links.map((link) => (
             <li key={link.id}>

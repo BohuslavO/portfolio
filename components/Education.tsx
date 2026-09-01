@@ -8,10 +8,10 @@ const education = [
   },
   {
     school: "Rivne Regional Scientific Lyceum",
-    location: "Ukraine (online)",
+    location: "Ukraine",
     degree: "Full General Secondary Education — Completed",
     detail: "Specialization: Computer Science",
-    year: "2022–2026",
+    year: "2026",
   },
 ];
 
